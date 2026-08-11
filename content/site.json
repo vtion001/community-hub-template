@@ -35,8 +35,7 @@
   "statsBlock": {
     "lines": ["no algorithms.", "just people.", "growing @ 500+ members"],
     "links": [
-      { "label": "gallery", "href": "/gallery.html" },
-      { "label": "github", "href": "#" }
+      { "label": "gallery", "href": "/gallery.html" }
     ]
   },
   "ticker": {
@@ -142,7 +141,7 @@
           "Write a resource guide — a tool, a gear setup, a read worth sharing.",
           "Help with the site — this page is open source."
         ]},
-        { "type": "cta", "label": "GitHub", "href": "#" }
+        { "type": "text", "body": "GitHub repo coming soon — for now, reach out via WhatsApp." }
       ]
     },
     "account": {
