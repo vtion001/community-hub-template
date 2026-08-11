@@ -1,7 +1,7 @@
 {
   "brand": {
-    "name": "MAKER COLLECTIVE",
-    "shortName": "MAKER",
+    "name": "Sig & Espresso",
+    "shortName": "S&E",
     "logo": "/images/logo.svg"
   },
   "nav": {
@@ -21,14 +21,14 @@
   },
   "hero": {
     "headlineLines": [
-      { "text": "BUILD", "tone": "accent" },
-      { "text": "IN", "tone": "base" },
-      { "text": "PUBLIC", "tone": "accent" }
+      { "text": "SIG", "tone": "accent" },
+      { "text": "&", "tone": "base" },
+      { "text": "ESPRESSO", "tone": "accent" }
     ],
-    "taglineLines": ["no spam.", "no sales pitches.", "no gatekeeping."],
-    "ruleLine": "one rule: show your work",
+    "taglineLines": ["no résumés.", "no small talk.", "no dress code."],
+    "ruleLine": "no titles. no gatekeeping. just show up.",
     "tiers": ["NEWCOMER", "BUILDER", "MENTOR", "VETERAN", "LEGEND"],
-    "ctaPrimary": { "label": "Join the Community", "href": "#join" },
+    "ctaPrimary": { "label": "Join WhatsApp", "href": "#join-whatsapp" },
     "ctaSecondary": { "label": "Upcoming Events", "href": "#events" },
     "illustration": "/images/hero-bg.svg"
   },
@@ -40,6 +40,6 @@
     ]
   },
   "ticker": {
-    "text": "342 members online now"
+    "text": "128 members online now"
   }
 }
