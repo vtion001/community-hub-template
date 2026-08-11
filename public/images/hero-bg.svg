@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
   <!-- Original decorative line-art duo: a hammer-head builder and a lightbulb idea-maker. -->
-  <g stroke="#F2F0EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.16">
+  <g stroke="#4A342A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.22">
 
     <!-- Character A: hammer-head builder -->
     <g>
@@ -8,8 +8,8 @@
       <rect x="120" y="70" width="220" height="110" rx="18"/>
       <rect x="205" y="180" width="50" height="70" rx="10"/>
       <!-- face -->
-      <circle cx="200" cy="120" r="9" fill="#F2F0EA"/>
-      <circle cx="260" cy="120" r="9" fill="#F2F0EA"/>
+      <circle cx="200" cy="120" r="9" fill="#4A342A"/>
+      <circle cx="260" cy="120" r="9" fill="#4A342A"/>
       <path d="M195 150 Q230 170 265 150"/>
       <!-- torso -->
       <rect x="150" y="250" width="160" height="220" rx="30"/>
@@ -33,8 +33,8 @@
       <path d="M615 385 h50"/>
       <path d="M615 405 h50"/>
       <!-- filament face -->
-      <circle cx="605" cy="215" r="9" fill="#F2F0EA"/>
-      <circle cx="675" cy="215" r="9" fill="#F2F0EA"/>
+      <circle cx="605" cy="215" r="9" fill="#4A342A"/>
+      <circle cx="675" cy="215" r="9" fill="#4A342A"/>
       <path d="M600 260 Q640 285 680 260"/>
       <!-- torso -->
       <rect x="580" y="430" width="140" height="200" rx="28"/>

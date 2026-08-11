@@ -4,11 +4,11 @@
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --color-bg: #14151a;
-  --color-fg: #f2f0ea;
-  --color-muted: #8a8a93;
-  --color-accent: #ffb020;
-  --color-panel: #1c1d24;
+  --color-bg: #fbf3e7;
+  --color-fg: #4a342a;
+  --color-muted: #9c8a7d;
+  --color-accent: #d98255;
+  --color-panel: #f0e6d6;
 
   --radius-brand: 6px;
 }
