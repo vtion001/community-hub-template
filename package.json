@@ -1,0 +1,13 @@
+{
+  "name": "community-hub-template",
+  "version": "1.0.0",
+  "description": "Reusable community-site template (layout/structure extracted from a reference site; all copy, colors, and artwork are original).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "license": "ISC"
+}

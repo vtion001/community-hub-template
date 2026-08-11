@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "url": "https://ai-and-coffee.com/",
+    "slug": "ai-coffee",
+    "capturedAt": "2026-08-11T18:45:50.650Z",
+    "desktopViewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "headlessFallbackUsed": false,
+    "modalDismissedSelector": null
+  },
+  "sections": [
+    {
+      "index": 1,
+      "tag": "div",
+      "bbox": {
+        "y": 101,
+        "height": 561
+      },
+      "background": "#e8e4d9",
+      "fullBleed": false,
+      "contentWidthPx": 512,
+      "viewportWidthPx": 1440,
+      "carouselLikely": false,
+      "layout": {
+        "display": "flex",
+        "columns": 5,
+        "trackWidths": null,
+        "gap": "12px"
+      },
+      "media": {
+        "count": 0,
+        "items": []
+      },
+      "text": {
+        "headings": [
+          {
+            "level": 1,
+            "label": "AIANDCOFFEE",
+            "semantic": true
+          }
+        ],
+        "paragraphCount": 4,
+        "density": "low",
+        "ctaCount": 2
+      }
+    },
+    {
+      "index": 2,
+      "tag": "div",
+      "bbox": {
+        "y": 572,
+        "height": 200
+      },
+      "background": "#e8e4d9",
+      "fullBleed": false,
+      "contentWidthPx": 120,
+      "viewportWidthPx": 1440,
+      "carouselLikely": false,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "trackWidths": null,
+        "gap": "normal"
+      },
+      "media": {
+        "count": 0,
+        "items": []
+      },
+      "text": {
+        "headings": [],
+        "paragraphCount": 0,
+        "density": "low",
+        "ctaCount": 0
+      }
+    }
+  ],
+  "nav": {
+    "itemCount": 14,
+    "tier": "flat",
+    "sticky": null,
+    "megaMenu": false,
+    "hasDropdowns": false,
+    "topbar": false
+  },
+  "footer": null
+}

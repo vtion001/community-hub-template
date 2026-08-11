@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
+  <!-- Original decorative line-art duo: a hammer-head builder and a lightbulb idea-maker. -->
+  <g stroke="#F2F0EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.16">
+
+    <!-- Character A: hammer-head builder -->
+    <g>
+      <!-- head (hammer shape) -->
+      <rect x="120" y="70" width="220" height="110" rx="18"/>
+      <rect x="205" y="180" width="50" height="70" rx="10"/>
+      <!-- face -->
+      <circle cx="200" cy="120" r="9" fill="#F2F0EA"/>
+      <circle cx="260" cy="120" r="9" fill="#F2F0EA"/>
+      <path d="M195 150 Q230 170 265 150"/>
+      <!-- torso -->
+      <rect x="150" y="250" width="160" height="220" rx="30"/>
+      <!-- arms -->
+      <path d="M150 300 Q70 320 55 400"/>
+      <circle cx="50" cy="415" r="26"/>
+      <path d="M310 300 Q400 260 430 190"/>
+      <circle cx="440" cy="175" r="26"/>
+      <!-- legs -->
+      <path d="M190 470 Q170 560 140 630"/>
+      <circle cx="130" cy="645" r="24"/>
+      <path d="M270 470 Q300 560 335 630"/>
+      <circle cx="345" cy="645" r="24"/>
+    </g>
+
+    <!-- Character B: lightbulb idea-maker -->
+    <g>
+      <!-- head (bulb shape) -->
+      <circle cx="640" cy="230" r="120"/>
+      <path d="M600 340 h80 v30 h-80 z"/>
+      <path d="M615 385 h50"/>
+      <path d="M615 405 h50"/>
+      <!-- filament face -->
+      <circle cx="605" cy="215" r="9" fill="#F2F0EA"/>
+      <circle cx="675" cy="215" r="9" fill="#F2F0EA"/>
+      <path d="M600 260 Q640 285 680 260"/>
+      <!-- torso -->
+      <rect x="580" y="430" width="140" height="200" rx="28"/>
+      <!-- arms -->
+      <path d="M580 470 Q500 450 470 380"/>
+      <circle cx="460" cy="365" r="24"/>
+      <path d="M720 470 Q800 500 830 570"/>
+      <circle cx="840" cy="585" r="24"/>
+      <!-- legs -->
+      <path d="M615 630 Q600 660 585 690"/>
+      <circle cx="578" cy="700" r="20"/>
+      <path d="M685 630 Q700 660 715 690"/>
+      <circle cx="722" cy="700" r="20"/>
+    </g>
+  </g>
+</svg>

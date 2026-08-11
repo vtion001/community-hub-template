@@ -1,0 +1,45 @@
+{
+  "brand": {
+    "name": "MAKER COLLECTIVE",
+    "shortName": "MAKER",
+    "logo": "/images/logo.svg"
+  },
+  "nav": {
+    "items": [
+      { "label": "Events", "href": "#events" },
+      { "label": "Shop", "href": "#shop" },
+      { "label": "Resources", "href": "#resources" },
+      { "label": "Forum", "href": "#forum" },
+      { "label": "Blog", "href": "#blog" },
+      { "label": "Gallery", "href": "#gallery" },
+      { "label": "Learn", "href": "#learn" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contribute", "href": "#contribute" },
+      { "label": "Account", "href": "#account" }
+    ],
+    "cta": { "label": "Join", "href": "#join" }
+  },
+  "hero": {
+    "headlineLines": [
+      { "text": "BUILD", "tone": "accent" },
+      { "text": "IN", "tone": "base" },
+      { "text": "PUBLIC", "tone": "accent" }
+    ],
+    "taglineLines": ["no spam.", "no sales pitches.", "no gatekeeping."],
+    "ruleLine": "one rule: show your work",
+    "tiers": ["NEWCOMER", "BUILDER", "MENTOR", "VETERAN", "LEGEND"],
+    "ctaPrimary": { "label": "Join the Community", "href": "#join" },
+    "ctaSecondary": { "label": "Upcoming Events", "href": "#events" },
+    "illustration": "/images/hero-bg.svg"
+  },
+  "statsBlock": {
+    "lines": ["no algorithms.", "just people.", "growing @ 500+ members"],
+    "links": [
+      { "label": "gallery", "href": "#gallery" },
+      { "label": "github", "href": "#" }
+    ]
+  },
+  "ticker": {
+    "text": "342 members online now"
+  }
+}
