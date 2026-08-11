@@ -8,11 +8,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "qc": "node scripts/qc-nav.mjs"
   },
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
