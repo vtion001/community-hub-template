@@ -6,16 +6,16 @@
   },
   "nav": {
     "items": [
-      { "label": "Events", "href": "#events" },
-      { "label": "Shop", "href": "#shop" },
-      { "label": "Resources", "href": "#resources" },
-      { "label": "Forum", "href": "#forum" },
-      { "label": "Blog", "href": "#blog" },
-      { "label": "Gallery", "href": "#gallery" },
-      { "label": "Learn", "href": "#learn" },
-      { "label": "About", "href": "#about" },
-      { "label": "Contribute", "href": "#contribute" },
-      { "label": "Account", "href": "#account" }
+      { "label": "Events", "href": "/events.html", "slug": "events" },
+      { "label": "Shop", "href": "/shop.html", "slug": "shop" },
+      { "label": "Resources", "href": "/resources.html", "slug": "resources" },
+      { "label": "Forum", "href": "/forum.html", "slug": "forum" },
+      { "label": "Blog", "href": "/blog.html", "slug": "blog" },
+      { "label": "Gallery", "href": "/gallery.html", "slug": "gallery" },
+      { "label": "Learn", "href": "/learn.html", "slug": "learn" },
+      { "label": "About", "href": "/about.html", "slug": "about" },
+      { "label": "Contribute", "href": "/contribute.html", "slug": "contribute" },
+      { "label": "Account", "href": "/account.html", "slug": "account" }
     ],
     "cta": { "label": "Join", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
   },
@@ -29,17 +29,136 @@
     "ruleLine": "no titles. no gatekeeping. just show up.",
     "tiers": ["NEWCOMER", "BUILDER", "MENTOR", "VETERAN", "LEGEND"],
     "ctaPrimary": { "label": "Join WhatsApp", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" },
-    "ctaSecondary": { "label": "Upcoming Events", "href": "#events" },
+    "ctaSecondary": { "label": "Upcoming Events", "href": "/events.html" },
     "illustration": "/images/hero-bg.svg"
   },
   "statsBlock": {
     "lines": ["no algorithms.", "just people.", "growing @ 500+ members"],
     "links": [
-      { "label": "gallery", "href": "#gallery" },
+      { "label": "gallery", "href": "/gallery.html" },
       { "label": "github", "href": "#" }
     ]
   },
   "ticker": {
     "text": "128 members online now"
+  },
+  "pages": {
+    "events": {
+      "title": "Events",
+      "intro": "No paid workshops, no ticket prices — just regular reasons to show up in person.",
+      "blocks": [
+        { "type": "list", "items": [
+          "Casual meetups — coffee, conversation, no agenda.",
+          "Show-and-tell sessions — bring something you built, five minutes, no judgment.",
+          "Coworking sessions — bring your laptop, work alongside people, ask for help when stuck."
+        ]},
+        { "type": "cta", "label": "Join WhatsApp for dates", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
+      ]
+    },
+    "shop": {
+      "title": "Shop",
+      "intro": "Small-batch merch, made for the community, not a storefront.",
+      "blocks": [
+        { "type": "cards", "items": [
+          { "title": "Mug", "body": "Ceramic, holds a full pot's worth of patience." },
+          { "title": "Tote bag", "body": "Canvas, fits a laptop and a bag of beans." },
+          { "title": "Sticker pack", "body": "Five stickers, one per member tier." }
+        ]},
+        { "type": "cta", "label": "DM us on WhatsApp to order", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
+      ]
+    },
+    "resources": {
+      "title": "Resources",
+      "intro": "Things members keep coming back to — added as we find them, not sold to you.",
+      "blocks": [
+        { "type": "list", "items": [
+          "Tools — AI and dev tools the community actually uses.",
+          "Gear guides — coffee setups worth the counter space.",
+          "Reads — articles and threads worth the ten minutes."
+        ]}
+      ]
+    },
+    "forum": {
+      "title": "Forum",
+      "intro": "There's no separate forum software — the WhatsApp group is the forum.",
+      "blocks": [
+        { "type": "text", "body": "Questions, project updates, and random tangents all happen in one place. No sub-channels to lose track of, no notifications from six different apps." },
+        { "type": "cta", "label": "Join the conversation", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
+      ]
+    },
+    "blog": {
+      "title": "Blog",
+      "intro": "Occasional write-ups from members — coming soon.",
+      "blocks": [
+        { "type": "cards", "items": [
+          { "title": "Why we don't do résumés", "body": "Coming soon." },
+          { "title": "Notes from the first coworking session", "body": "Coming soon." },
+          { "title": "A show-and-tell roundup", "body": "Coming soon." }
+        ]}
+      ]
+    },
+    "gallery": {
+      "title": "Gallery",
+      "intro": "Photos from meetups — this fills in as we run more events.",
+      "blocks": [
+        { "type": "cards", "items": [
+          { "title": "Meetup #1", "body": "Photos coming soon." },
+          { "title": "Show & Tell Night", "body": "Photos coming soon." },
+          { "title": "Coworking Session", "body": "Photos coming soon." }
+        ]}
+      ]
+    },
+    "learn": {
+      "title": "Learn",
+      "intro": "Low-pressure ways to pick things up from other members.",
+      "blocks": [
+        { "type": "list", "items": [
+          "Intro nights — beginner-friendly walkthroughs of AI tools.",
+          "Workshops — hands-on, small group, bring a laptop.",
+          "Pairing sessions — sit with someone and work through a real problem."
+        ]}
+      ]
+    },
+    "about": {
+      "title": "About",
+      "intro": "Sig & Espresso started as a coffee-and-code hangout, without the gatekeeping.",
+      "blocks": [
+        { "type": "text", "body": "No coaching program, no paid course, no sales pitches. Just people who like coffee, tech, and honest conversation, meeting up regularly." },
+        { "type": "list", "items": [
+          "NEWCOMER — just joined, welcome.",
+          "BUILDER — showed up a few times, shipping things.",
+          "MENTOR — helps newer members find their footing.",
+          "VETERAN — been around a while, knows the regulars.",
+          "LEGEND — the people everyone already knows."
+        ]}
+      ]
+    },
+    "contribute": {
+      "title": "Contribute",
+      "intro": "This community runs on people pitching in, not a budget.",
+      "blocks": [
+        { "type": "list", "items": [
+          "Host an event — casual meetup, show-and-tell, or coworking session.",
+          "Write a resource guide — a tool, a gear setup, a read worth sharing.",
+          "Help with the site — this page is open source."
+        ]},
+        { "type": "cta", "label": "GitHub", "href": "#" }
+      ]
+    },
+    "account": {
+      "title": "Account",
+      "intro": "There's no login here — membership works through the WhatsApp group.",
+      "blocks": [
+        { "type": "text", "body": "Everyone starts as a Newcomer and moves up by showing up — no application, no approval process." },
+        { "type": "list", "items": [
+          "NEWCOMER — just joined.",
+          "BUILDER — regular at meetups, sharing what you're working on.",
+          "MENTOR — helping newer members.",
+          "VETERAN — long-time regular.",
+          "LEGEND — community fixture."
+        ]},
+        { "type": "cta", "label": "Join via WhatsApp", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
+      ]
+    }
   }
 }
