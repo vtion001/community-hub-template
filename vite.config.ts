@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import { execSync } from 'node:child_process'
+import { fileURLToPath, URL } from 'node:url'
+import path from 'node:path'
 
 function buildMetaPlugin() {
   let sha = 'dev'
@@ -15,15 +17,31 @@ function buildMetaPlugin() {
     transformIndexHtml(html: string) {
       return html.replace(
         '</head>',
-        `  <meta name="x-build" content="${stamp}">\n  </head>`
+        `  <meta name="x-build" content="${stamp}">\n  </meta>`
       )
     },
   }
 }
 
+const root = fileURLToPath(new URL('.', import.meta.url))
+const pageSlugs = [
+  'events', 'shop', 'resources', 'forum', 'blog',
+  'gallery', 'learn', 'about', 'contribute', 'account',
+]
+
 export default defineConfig({
   plugins: [tailwindcss(), buildMetaPlugin()],
   server: {
     fs: { allow: ['..'] },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(root, 'index.html'),
+        ...Object.fromEntries(
+          pageSlugs.map((slug) => [slug, path.resolve(root, `${slug}.html`)])
+        ),
+      },
+    },
   },
 })
