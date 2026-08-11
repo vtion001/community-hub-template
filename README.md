@@ -8,7 +8,7 @@ The **layout structure only** was extracted from a reference site (`ai-and-coffe
 
 All content, colors, fonts, and artwork in this template are original:
 - Copy: `content/site.json` (currently populated for "Sig & Espresso" — replace for your project)
-- Palette: dark ink `#14151A` / amber accent `#FFB020` (own token set in `src/style.css`); logo uses a cream/terracotta variant (`#FBF3E7` / `#4A342A` / `#D98255`)
+- Palette: cream `#fbf3e7` background / coffee-brown `#4a342a` text / terracotta `#d98255` accent (own token set in `src/style.css`), matching the logo
 - Logo + hero illustration: hand-authored original SVGs in `public/images/`
 - WhatsApp group copy (full/short/pinned-message versions) + real invite link: `docs/whatsapp-description.md`
 
@@ -38,4 +38,10 @@ src/main.ts               # renders the page from site.json
 src/style.css              # Tailwind v4 + theme tokens
 scripts/wireframe-extract.mjs   # structural-extraction tool (re-run against any reference site)
 docs/design/              # captured wireframe blueprint + build screenshots
+src/chrome.ts             # shared nav/footer renderer (pure functions)
+src/renderPage.ts         # generic page-body renderer (text/list/cards/cta blocks)
+src/pages/                # one thin entry file per nav page
+*.html (root)              # 11 real pages: index + one per nav item
+tests/                     # vitest unit tests for chrome.ts, renderPage.ts, content shape, palette
+scripts/qc-nav.mjs         # Playwright QC: nav click-through + console/error checks across all pages
 ```
