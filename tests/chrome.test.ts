@@ -37,6 +37,22 @@ describe('renderHeader', () => {
     expect(html).toContain('Sig & Espresso')
     expect(html).toContain('https://example.com')
   })
+
+  it('renders a mobile nav disclosure with all nav items', () => {
+    const html = renderHeader(site, 'events')
+    expect(html).toContain('<details class="lg:hidden">')
+    expect(html).toContain('<summary')
+    const mobileNav = html.match(/<nav id="mobile-nav"[^>]*>[\s\S]*?<\/nav>/)![0]
+    expect(mobileNav).toContain('Events')
+    expect(mobileNav).toContain('Shop')
+  })
+
+  it('marks the active page in the mobile nav too', () => {
+    const html = renderHeader(site, 'events')
+    const mobileNav = html.match(/<nav id="mobile-nav"[^>]*>[\s\S]*?<\/nav>/)![0]
+    const eventsLink = mobileNav.match(/<a href="\/events\.html"[^>]*>/)![0]
+    expect(eventsLink).toContain('border-[var(--color-accent)]')
+  })
 })
 
 describe('renderFooter', () => {
