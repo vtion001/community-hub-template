@@ -25,7 +25,7 @@ export function renderHeader(site: SiteChrome, activePage: string): string {
       <nav class="hidden flex-1 items-center justify-center gap-5 font-brand text-xs uppercase tracking-wide text-[var(--color-muted)] lg:flex">
         ${navLinks}
       </nav>
-      <a href="${site.nav.cta.href}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-4 py-2 font-brand text-xs font-bold uppercase text-[var(--color-bg)] hover:opacity-90">
+      <a href="${site.nav.cta.href}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-4 py-2 font-brand text-xs font-bold uppercase text-[var(--color-fg)] hover:opacity-90">
         ${site.nav.cta.label}
       </a>
     </header>

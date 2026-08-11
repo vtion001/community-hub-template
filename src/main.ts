@@ -27,7 +27,7 @@ app.innerHTML = `
       </ul>
 
       <div class="mt-8 flex flex-wrap gap-4">
-        <a href="${site.hero.ctaPrimary.href}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-bg)] hover:opacity-90">
+        <a href="${site.hero.ctaPrimary.href}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">
           ${site.hero.ctaPrimary.label}
         </a>
         <a href="${site.hero.ctaSecondary.href}" class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/40 px-6 py-3 font-brand text-sm font-bold uppercase hover:border-[var(--color-fg)]">

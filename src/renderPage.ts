@@ -34,6 +34,6 @@ function renderBlock(block: Block): string {
         )
         .join('')}</div>`
     case 'cta':
-      return `<a href="${block.href}" class="inline-block rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-bg)] hover:opacity-90">${block.label}</a>`
+      return `<a href="${block.href}" class="inline-block rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">${block.label}</a>`
   }
 }
