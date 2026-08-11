@@ -17,7 +17,7 @@ function buildMetaPlugin() {
     transformIndexHtml(html: string) {
       return html.replace(
         '</head>',
-        `  <meta name="x-build" content="${stamp}">\n  </meta>`
+        `  <meta name="x-build" content="${stamp}">\n  </head>`
       )
     },
   }
