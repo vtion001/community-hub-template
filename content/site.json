@@ -17,7 +17,7 @@
       { "label": "Contribute", "href": "#contribute" },
       { "label": "Account", "href": "#account" }
     ],
-    "cta": { "label": "Join", "href": "#join" }
+    "cta": { "label": "Join", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
   },
   "hero": {
     "headlineLines": [
@@ -28,7 +28,7 @@
     "taglineLines": ["no résumés.", "no small talk.", "no dress code."],
     "ruleLine": "no titles. no gatekeeping. just show up.",
     "tiers": ["NEWCOMER", "BUILDER", "MENTOR", "VETERAN", "LEGEND"],
-    "ctaPrimary": { "label": "Join WhatsApp", "href": "#join-whatsapp" },
+    "ctaPrimary": { "label": "Join WhatsApp", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" },
     "ctaSecondary": { "label": "Upcoming Events", "href": "#events" },
     "illustration": "/images/hero-bg.svg"
   },

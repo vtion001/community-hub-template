@@ -8,12 +8,11 @@ The **layout structure only** was extracted from a reference site (`ai-and-coffe
 
 All content, colors, fonts, and artwork in this template are original:
 - Copy: `content/site.json` (currently populated for "Sig & Espresso" — replace for your project)
-- Palette: dark ink `#14151A` / amber accent `#FFB020` (own token set in `src/style.css`)
+- Palette: dark ink `#14151A` / amber accent `#FFB020` (own token set in `src/style.css`); logo uses a cream/terracotta variant (`#FBF3E7` / `#4A342A` / `#D98255`)
 - Logo + hero illustration: hand-authored original SVGs in `public/images/`
+- WhatsApp group copy (full/short/pinned-message versions) + real invite link: `docs/whatsapp-description.md`
 
-> **TODO (Sig & Espresso launch):** `hero.ctaPrimary.href` in `content/site.json` is a
-> placeholder (`#join-whatsapp`). Replace it with the real WhatsApp group invite link
-> before going live.
+The WhatsApp join link is now live in both `nav.cta.href` and `hero.ctaPrimary.href` in `content/site.json`.
 
 ## Using this template
 
