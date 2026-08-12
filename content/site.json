@@ -62,10 +62,14 @@
       "title": "Events",
       "intro": "No paid workshops, no ticket prices — just regular reasons to show up in person.",
       "blocks": [
-        { "type": "list", "items": [
-          "Casual meetups — coffee, conversation, no agenda.",
-          "Show-and-tell sessions — bring something you built, five minutes, no judgment.",
-          "Coworking sessions — bring your laptop, work alongside people, ask for help when stuck."
+        { "type": "cards", "items": [
+          { "tag": "DROP IN", "title": "Casual meetups", "body": "Coffee, conversation, no agenda." },
+          { "tag": "SHOW & TELL", "title": "Show-and-tell sessions", "body": "Bring something you built. Five minutes, no judgment." },
+          { "tag": "COWORK", "title": "Coworking sessions", "body": "Bring your laptop, work alongside people, ask for help when stuck." }
+        ]},
+        { "type": "heading", "text": "Where" },
+        { "type": "cards", "items": [
+          { "title": "Metro Manila", "body": "Real dates will show here once our Luma calendar is live. For now, watch WhatsApp for the next one." }
         ]},
         { "type": "cta", "label": "Join WhatsApp for dates", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
       ]
