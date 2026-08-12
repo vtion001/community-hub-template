@@ -35,6 +35,9 @@ describe('cozy palette tokens', () => {
   it('uses the terracotta accent token', () => {
     expect(css).toContain('#e08f64')
   })
+  it('uses the dark terracotta accent-text token', () => {
+    expect(css).toContain('#b24333')
+  })
   it('uses the darkened muted token', () => {
     expect(css).toContain('#7a6c61')
   })
@@ -52,6 +55,9 @@ describe('palette WCAG AA contrast (4.5:1 for body-size text)', () => {
   })
   it('fg text on accent (button pattern) clears 4.5:1', () => {
     expect(contrastRatio('#4a342a', '#e08f64')).toBeGreaterThanOrEqual(4.5)
+  })
+  it('accent-text on bg (hero headline) clears 4.5:1', () => {
+    expect(contrastRatio('#b24333', '#fbf3e7')).toBeGreaterThanOrEqual(4.5)
   })
 })
 

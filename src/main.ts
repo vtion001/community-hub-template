@@ -2,7 +2,7 @@ import './style.css'
 import site from '../content/site.json'
 import { renderHeader, renderFooter } from './chrome'
 
-const tone = (t: string) => (t === 'accent' ? 'text-[var(--color-accent)]' : 'text-[var(--color-fg)]')
+const tone = (t: string) => (t === 'accent' ? 'text-[var(--color-accent-text)]' : 'text-[var(--color-fg)]')
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
