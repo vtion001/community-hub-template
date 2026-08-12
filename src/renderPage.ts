@@ -2,7 +2,7 @@ import { withBase } from './basePath'
 
 export type TextBlock = { type: 'text'; body: string }
 export type ListBlock = { type: 'list'; items: string[] }
-export type CardsBlock = { type: 'cards'; items: { title: string; body: string }[] }
+export type CardsBlock = { type: 'cards'; items: { title: string; body: string; tag?: string }[] }
 export type CtaBlock = { type: 'cta'; label: string; href: string }
 export type Block = TextBlock | ListBlock | CardsBlock | CtaBlock
 export type PageData = { title: string; intro: string; blocks: Block[] }
@@ -53,7 +53,11 @@ function renderBlock(block: Block): string {
       return `<div class="grid gap-4 sm:grid-cols-2">${block.items
         .map(
           (c) =>
-            `<div class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/15 p-5"><h3 class="font-brand font-bold">${c.title}</h3><p class="mt-2 text-sm text-[var(--color-muted)]">${c.body}</p></div>`
+            `<div class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/15 p-5">${
+              c.tag
+                ? `<span class="mb-2 inline-block border-b border-[var(--color-muted)]/40 pb-1 font-brand text-xs uppercase tracking-wide text-[var(--color-muted)]">${c.tag}</span>`
+                : ''
+            }<h3 class="font-brand font-bold">${c.title}</h3><p class="mt-2 text-sm text-[var(--color-muted)]">${c.body}</p></div>`
         )
         .join('')}</div>`
     case 'cta':

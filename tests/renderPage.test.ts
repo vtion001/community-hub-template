@@ -39,6 +39,22 @@ describe('renderPage', () => {
     expect(html).toContain('Body A')
   })
 
+  it('renders a card tag when present', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ tag: 'DROP IN', title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).toContain('DROP IN')
+  })
+
+  it('renders no tag element when a card has no tag', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).not.toContain('<span')
+  })
+
   it('renders a cta block', () => {
     const html = renderPage({
       title: 'T', intro: 'I',
