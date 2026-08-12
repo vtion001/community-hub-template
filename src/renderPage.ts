@@ -1,3 +1,5 @@
+import { withBase } from './basePath'
+
 export type TextBlock = { type: 'text'; body: string }
 export type ListBlock = { type: 'list'; items: string[] }
 export type CardsBlock = { type: 'cards'; items: { title: string; body: string }[] }
@@ -34,6 +36,6 @@ function renderBlock(block: Block): string {
         )
         .join('')}</div>`
     case 'cta':
-      return `<a href="${block.href}" class="inline-block rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">${block.label}</a>`
+      return `<a href="${withBase(block.href)}" class="inline-block rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">${block.label}</a>`
   }
 }

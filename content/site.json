@@ -38,8 +38,24 @@
       { "label": "gallery", "href": "/gallery.html" }
     ]
   },
-  "ticker": {
-    "text": "128 members online now"
+  "player": {
+    "tracks": [
+      { "title": "Focus Loop 01", "src": "/audio/placeholder-01.mp3" },
+      { "title": "Focus Loop 02", "src": "/audio/placeholder-02.mp3" },
+      { "title": "Focus Loop 03", "src": "/audio/placeholder-03.mp3" },
+      { "title": "Focus Loop 04", "src": "/audio/placeholder-04.mp3" },
+      { "title": "Focus Loop 05", "src": "/audio/placeholder-05.mp3" },
+      { "title": "Focus Loop 06", "src": "/audio/placeholder-06.mp3" },
+      { "title": "Focus Loop 07", "src": "/audio/placeholder-07.mp3" },
+      { "title": "Focus Loop 08", "src": "/audio/placeholder-08.mp3" },
+      { "title": "Focus Loop 09", "src": "/audio/placeholder-09.mp3" },
+      { "title": "Focus Loop 10", "src": "/audio/placeholder-10.mp3" },
+      { "title": "Focus Loop 11", "src": "/audio/placeholder-11.mp3" },
+      { "title": "Focus Loop 12", "src": "/audio/placeholder-12.mp3" },
+      { "title": "Focus Loop 13", "src": "/audio/placeholder-13.mp3" },
+      { "title": "Focus Loop 14", "src": "/audio/placeholder-14.mp3" },
+      { "title": "Focus Loop 15", "src": "/audio/placeholder-15.mp3" }
+    ]
   },
   "pages": {
     "events": {

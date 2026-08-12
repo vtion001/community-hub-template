@@ -10,7 +10,12 @@ const site = {
     ],
     cta: { label: 'Join', href: 'https://example.com' },
   },
-  ticker: { text: '128 members online now' },
+  player: {
+    tracks: [
+      { title: 'Focus Loop 01', src: '/audio/placeholder-01.mp3' },
+      { title: 'Focus Loop 02', src: '/audio/placeholder-02.mp3' },
+    ],
+  },
 }
 
 describe('renderHeader', () => {
@@ -56,9 +61,25 @@ describe('renderHeader', () => {
 })
 
 describe('renderFooter', () => {
-  it('renders the ticker text and brand short name', () => {
+  it('renders the first track title, track count, and brand short name', () => {
     const html = renderFooter(site)
-    expect(html).toContain('128 members online now')
+    expect(html).toContain('Focus Loop 01')
+    expect(html).toContain('1/2')
     expect(html).toContain('S&E')
+  })
+
+  it('renders player controls and an audio element', () => {
+    const html = renderFooter(site)
+    expect(html).toContain('id="player-prev"')
+    expect(html).toContain('id="player-toggle"')
+    expect(html).toContain('id="player-next"')
+    expect(html).toContain('id="player-progress-track"')
+    expect(html).toContain('<audio id="player-audio"')
+  })
+
+  it('handles an empty track list gracefully', () => {
+    const emptySite = { ...site, player: { tracks: [] } }
+    const html = renderFooter(emptySite)
+    expect(html).toContain('no tracks')
   })
 })

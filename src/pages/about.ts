@@ -1,6 +1,6 @@
 import '../style.css'
 import site from '../../content/site.json'
-import { renderHeader, renderFooter } from '../chrome'
+import { renderHeader, renderFooter, mountPlayer } from '../chrome'
 import { renderPage } from '../renderPage'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -10,3 +10,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </main>
   ${renderFooter(site as any)}
 `
+
+mountPlayer(site as any)

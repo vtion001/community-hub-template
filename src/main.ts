@@ -1,6 +1,7 @@
 import './style.css'
 import site from '../content/site.json'
-import { renderHeader, renderFooter } from './chrome'
+import { renderHeader, renderFooter, mountPlayer } from './chrome'
+import { withBase } from './basePath'
 
 const tone = (t: string) => (t === 'accent' ? 'text-[var(--color-accent-text)]' : 'text-[var(--color-fg)]')
 
@@ -10,7 +11,7 @@ app.innerHTML = `
   ${renderHeader(site as any, 'home')}
 
   <main class="relative isolate overflow-hidden">
-    <img src="${site.hero.illustration}" alt="" class="pointer-events-none absolute right-[-8%] top-10 -z-10 hidden w-[55%] min-w-[420px] select-none md:block" />
+    <img src="${withBase(site.hero.illustration)}" alt="" class="pointer-events-none absolute right-[-8%] top-10 -z-10 hidden w-[55%] min-w-[420px] select-none md:block" />
 
     <section class="mx-auto max-w-6xl px-6 py-20">
       <h1 class="font-brand text-5xl font-bold leading-[0.95] sm:text-7xl">
@@ -27,10 +28,10 @@ app.innerHTML = `
       </ul>
 
       <div class="mt-8 flex flex-wrap gap-4">
-        <a href="${site.hero.ctaPrimary.href}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">
+        <a href="${withBase(site.hero.ctaPrimary.href)}" class="rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">
           ${site.hero.ctaPrimary.label}
         </a>
-        <a href="${site.hero.ctaSecondary.href}" class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/40 px-6 py-3 font-brand text-sm font-bold uppercase hover:border-[var(--color-fg)]">
+        <a href="${withBase(site.hero.ctaSecondary.href)}" class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/40 px-6 py-3 font-brand text-sm font-bold uppercase hover:border-[var(--color-fg)]">
           ${site.hero.ctaSecondary.label}
         </a>
       </div>
@@ -38,7 +39,7 @@ app.innerHTML = `
       <div class="mt-24 max-w-xs text-right font-brand text-xs text-[var(--color-muted)] ml-auto">
         ${site.statsBlock.lines.map((l) => `<p>${l}</p>`).join('')}
         <p class="mt-2 space-x-3">
-          ${site.statsBlock.links.map((l) => `<a href="${l.href}" class="hover:text-[var(--color-fg)]">${l.label}</a>`).join('')}
+          ${site.statsBlock.links.map((l) => `<a href="${withBase(l.href)}" class="hover:text-[var(--color-fg)]">${l.label}</a>`).join('')}
         </p>
       </div>
     </section>
@@ -46,3 +47,5 @@ app.innerHTML = `
 
   ${renderFooter(site as any)}
 `
+
+mountPlayer(site as any)

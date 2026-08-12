@@ -1,3 +1,6 @@
 node_modules/
 dist/
+dist-tunnel/
 docs/design/build-*.png
+.playwright-cli/
+preview.log

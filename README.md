@@ -1,6 +1,6 @@
 # Community Hub Template
 
-A reusable, data-driven landing-page template for community/maker-style sites — sticky nav, stacked mono headline, tagline stack, member-tier list, dual CTA, decorative hero illustration, and a bottom status bar.
+A reusable, data-driven landing-page template for community/maker-style sites — sticky nav, stacked mono headline, tagline stack, member-tier list, dual CTA, decorative hero illustration, and a bottom audio player bar.
 
 ## Origin
 
@@ -13,6 +13,12 @@ All content, colors, fonts, and artwork in this template are original:
 - WhatsApp group copy (full/short/pinned-message versions) + real invite link: `docs/whatsapp-description.md`
 
 The WhatsApp join link is now live in both `nav.cta.href` and `hero.ctaPrimary.href` in `content/site.json`.
+
+## Audio player
+
+The footer is a study-music player (play/pause, prev/next, progress bar, track counter) instead of a status ticker. Track list lives in `content/site.json` under `player.tracks`.
+
+> **Placeholder audio:** `public/audio/placeholder-01.mp3` through `-15.mp3` are short synthesized sine-wave tones (generated locally with `ffmpeg`, not real music) — they exist only so the player is fully testable end to end. Replace them with real, properly licensed instrumental tracks before this goes live: swap the files in `public/audio/` and update the `title`/`src` fields in `content/site.json`'s `player.tracks` to match.
 
 ## Using this template
 
@@ -44,4 +50,5 @@ src/pages/                # one thin entry file per nav page
 *.html (root)              # 11 real pages: index + one per nav item
 tests/                     # vitest unit tests for chrome.ts, renderPage.ts, content shape, palette
 scripts/qc-nav.mjs         # Playwright QC: nav click-through + console/error checks across all pages
+public/audio/              # study-music player tracks (currently placeholder tones — see Audio player above)
 ```
