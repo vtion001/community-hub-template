@@ -55,6 +55,14 @@ describe('renderPage', () => {
     expect(html).not.toContain('<span')
   })
 
+  it('renders the cards grid with a 3-column desktop breakpoint', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).toContain('lg:grid-cols-3')
+  })
+
   it('renders a cta block', () => {
     const html = renderPage({
       title: 'T', intro: 'I',

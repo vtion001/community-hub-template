@@ -50,7 +50,7 @@ function renderBlock(block: Block): string {
         .map((i) => `<li>${i}</li>`)
         .join('')}</ul>`
     case 'cards':
-      return `<div class="grid gap-4 sm:grid-cols-2">${block.items
+      return `<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">${block.items
         .map(
           (c) =>
             `<div class="rounded-[var(--radius-brand)] border border-[var(--color-fg)]/15 p-5">${
