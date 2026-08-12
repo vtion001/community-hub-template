@@ -4,7 +4,7 @@ A reusable, data-driven landing-page template for community/maker-style sites �
 
 ## Origin
 
-The **layout structure only** was extracted from a reference site (`ai-and-coffee.com`) using `scripts/wireframe-extract.mjs`, which captures section geometry, type scale, and palette sampling — never copy, images, or brand assets. See `docs/design/ai-coffee/WIREFRAME.md` for the captured blueprint.
+The **layout structure only** was extracted from a reference site using `scripts/wireframe-extract.mjs`, which captures section geometry, type scale, and palette sampling — never copy, images, or brand assets. See `docs/design/` for the captured blueprint.
 
 All content, colors, fonts, and artwork in this template are original:
 - Copy: `content/site.json` (currently populated for "Sig & Espresso" — replace for your project)
