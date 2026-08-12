@@ -4,7 +4,8 @@ export type TextBlock = { type: 'text'; body: string }
 export type ListBlock = { type: 'list'; items: string[] }
 export type CardsBlock = { type: 'cards'; items: { title: string; body: string; tag?: string }[] }
 export type CtaBlock = { type: 'cta'; label: string; href: string }
-export type Block = TextBlock | ListBlock | CardsBlock | CtaBlock
+export type HeadingBlock = { type: 'heading'; text: string }
+export type Block = TextBlock | ListBlock | CardsBlock | CtaBlock | HeadingBlock
 export type PageData = { title: string; intro: string; blocks: Block[] }
 
 export function renderPage(page: PageData | undefined): string {
@@ -60,6 +61,8 @@ function renderBlock(block: Block): string {
             }<h3 class="font-brand font-bold">${c.title}</h3><p class="mt-2 text-sm text-[var(--color-muted)]">${c.body}</p></div>`
         )
         .join('')}</div>`
+    case 'heading':
+      return `<h2 class="font-brand text-xs font-bold uppercase tracking-wide text-[var(--color-muted)]">${block.text}</h2>`
     case 'cta':
       return `<a href="${withBase(block.href)}" class="inline-block rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-6 py-3 font-brand text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">${block.label}</a>`
   }

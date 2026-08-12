@@ -63,6 +63,15 @@ describe('renderPage', () => {
     expect(html).toContain('lg:grid-cols-3')
   })
 
+  it('renders a heading block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'heading', text: 'Where' }],
+    })
+    expect(html).toContain('Where')
+    expect(html).toContain('<h2')
+  })
+
   it('renders a cta block', () => {
     const html = renderPage({
       title: 'T', intro: 'I',
