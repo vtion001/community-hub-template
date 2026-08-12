@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "url": "https://ai-and-coffee.com/about",
+    "slug": "about-ref",
+    "capturedAt": "2026-08-12T03:24:37.660Z",
+    "desktopViewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "headlessFallbackUsed": false,
+    "modalDismissedSelector": null
+  },
+  "sections": [
+    {
+      "index": 1,
+      "tag": "div",
+      "bbox": {
+        "y": 0,
+        "height": 2423
+      },
+      "background": "#e8e4d9",
+      "fullBleed": true,
+      "contentWidthPx": 1440,
+      "viewportWidthPx": 1440,
+      "carouselLikely": false,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "trackWidths": null,
+        "gap": "normal"
+      },
+      "media": {
+        "count": 9,
+        "items": [
+          {
+            "type": "image",
+            "aspectRatio": 1,
+            "sizeBucket": "thumb",
+            "position": "left"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 1,
+            "sizeBucket": "hero",
+            "position": "right"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 0.4,
+            "sizeBucket": "hero",
+            "position": "left"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 0.4,
+            "sizeBucket": "hero",
+            "position": "left"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 0.4,
+            "sizeBucket": "hero",
+            "position": "center"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 1.48,
+            "sizeBucket": "large",
+            "position": "left"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 1.48,
+            "sizeBucket": "large",
+            "position": "center"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 1.48,
+            "sizeBucket": "large",
+            "position": "center"
+          },
+          {
+            "type": "image",
+            "aspectRatio": 1.48,
+            "sizeBucket": "large",
+            "position": "right"
+          }
+        ]
+      },
+      "text": {
+        "headings": [],
+        "paragraphCount": 28,
+        "density": "high",
+        "ctaCount": 4
+      }
+    }
+  ],
+  "nav": {
+    "itemCount": 14,
+    "tier": "flat",
+    "sticky": null,
+    "megaMenu": false,
+    "hasDropdowns": false,
+    "topbar": false
+  },
+  "footer": null
+}

@@ -47,4 +47,39 @@ describe('renderPage', () => {
     expect(html).toContain('href="/join"')
     expect(html).toContain('Join')
   })
+
+  it('renders at least two distinct sections: a header band and a content band', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'text', body: 'Body copy.' }],
+    })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBeGreaterThanOrEqual(2)
+  })
+
+  it('includes the mascot illustration in the header band', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    expect(html).toContain('/images/hero-bg.svg')
+  })
+
+  it('pulls cta blocks into their own trailing section, separate from other content', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [
+        { type: 'text', body: 'Body copy.' },
+        { type: 'cta', label: 'Join', href: '/join' },
+      ],
+    })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBe(3)
+    const ctaIndex = html.indexOf('Join')
+    const bodyIndex = html.indexOf('Body copy.')
+    expect(ctaIndex).toBeGreaterThan(bodyIndex)
+  })
+
+  it('has no content sections at all when there are zero blocks beyond header', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBe(2)
+  })
 })

@@ -5,7 +5,7 @@ import { renderPage } from '../renderPage'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${renderHeader(site as any, 'shop')}
-  <main class="mx-auto max-w-4xl px-6 py-16">
+  <main class="relative isolate overflow-hidden">
     ${renderPage((site.pages as any).shop)}
   </main>
   ${renderFooter(site as any)}

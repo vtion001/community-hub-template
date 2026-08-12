@@ -9,7 +9,7 @@ The **layout structure only** was extracted from a reference site using `scripts
 All content, colors, fonts, and artwork in this template are original:
 - Copy: `content/site.json` (currently populated for "Sig & Espresso" — replace for your project)
 - Palette: cream `#fbf3e7` background / coffee-brown `#4a342a` text / terracotta `#d98255` accent (own token set in `src/style.css`), matching the logo
-- Logo + hero illustration: hand-authored original SVGs in `public/images/`
+- Logo + mascot illustration ("Nova" the AI/tech character and "Circle" the community character): hand-authored original SVGs in `public/images/`
 - WhatsApp group copy (full/short/pinned-message versions) + real invite link: `docs/whatsapp-description.md`
 
 The WhatsApp join link is now live in both `nav.cta.href` and `hero.ctaPrimary.href` in `content/site.json`.
@@ -19,6 +19,13 @@ The WhatsApp join link is now live in both `nav.cta.href` and `hero.ctaPrimary.h
 The footer is a study-music player (play/pause, prev/next, progress bar, track counter) instead of a status ticker. Track list lives in `content/site.json` under `player.tracks`.
 
 > **Placeholder audio:** `public/audio/placeholder-01.mp3` through `-15.mp3` are short synthesized sine-wave tones (generated locally with `ffmpeg`, not real music) — they exist only so the player is fully testable end to end. Replace them with real, properly licensed instrumental tracks before this goes live: swap the files in `public/audio/` and update the `title`/`src` fields in `content/site.json`'s `player.tracks` to match.
+
+## Page layout
+
+Every content page (`src/renderPage.ts`, shared by all 10 nav pages) renders as up to three distinct sections, not one long stacked column:
+1. **Header band** — page title + intro, panel background, mascot illustration on the right (desktop only)
+2. **Content band** — the page's list/cards/text blocks
+3. **CTA band** (only when the page has a `cta` block) — pulled out into its own highlighted closing section, separate from the rest of the content
 
 ## Using this template
 

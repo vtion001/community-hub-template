@@ -1,53 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
-  <!-- Original decorative line-art duo: a hammer-head builder and a lightbulb idea-maker. -->
-  <g stroke="#4A342A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.22">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none">
+  <!-- Original mascot duo: "Nova" (AI/tech) and "Circle" (community) -->
+  <g stroke="#4A342A" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <!-- Nova (AI) -->
+    <path d="M270 95 C 262 68, 262 46, 274 26" stroke="#D98255" stroke-width="4"/>
+    <circle cx="276" cy="20" r="9" stroke="#D98255" stroke-width="4"/>
+    <path d="M270 100
+             C 350 100, 400 150, 400 240
+             C 400 310, 400 380, 380 420
+             C 360 460, 320 470, 270 470
+             C 220 470, 180 460, 160 420
+             C 140 380, 140 310, 140 240
+             C 140 150, 190 100, 270 100 Z" stroke-width="5.5"/>
+    <rect x="195" y="175" width="150" height="110" rx="30" stroke-width="3.5"/>
+    <ellipse cx="230" cy="215" rx="8" ry="11" fill="#4A342A" stroke="none"/>
+    <ellipse cx="310" cy="215" rx="8" ry="11" fill="#4A342A" stroke="none"/>
+    <path d="M235 250 Q270 273 305 250" stroke-width="3"/>
+    <path d="M150 300 C 90 310, 60 360, 75 415" stroke-width="5"/>
+    <path d="M390 300 C 450 310, 480 355, 470 405" stroke-width="5"/>
+    <circle cx="75" cy="418" r="15" stroke-width="3.5"/>
+    <circle cx="468" cy="410" r="15" stroke-width="3.5"/>
+    <path d="M198 465 q22 14 44 0" stroke-width="3"/>
+    <path d="M298 465 q22 14 44 0" stroke-width="3"/>
+    <circle cx="180" cy="380" r="4" fill="#D98255" stroke="none"/>
+    <circle cx="360" cy="370" r="4" fill="#D98255" stroke="none"/>
+    <path d="M180 380 L360 370" stroke="#D98255" stroke-width="1.5"/>
+  </g>
 
-    <!-- Character A: hammer-head builder -->
-    <g>
-      <!-- head (hammer shape) -->
-      <rect x="120" y="70" width="220" height="110" rx="18"/>
-      <rect x="205" y="180" width="50" height="70" rx="10"/>
-      <!-- face -->
-      <circle cx="200" cy="120" r="9" fill="#4A342A"/>
-      <circle cx="260" cy="120" r="9" fill="#4A342A"/>
-      <path d="M195 150 Q230 170 265 150"/>
-      <!-- torso -->
-      <rect x="150" y="250" width="160" height="220" rx="30"/>
-      <!-- arms -->
-      <path d="M150 300 Q70 320 55 400"/>
-      <circle cx="50" cy="415" r="26"/>
-      <path d="M310 300 Q400 260 430 190"/>
-      <circle cx="440" cy="175" r="26"/>
-      <!-- legs -->
-      <path d="M190 470 Q170 560 140 630"/>
-      <circle cx="130" cy="645" r="24"/>
-      <path d="M270 470 Q300 560 335 630"/>
-      <circle cx="345" cy="645" r="24"/>
-    </g>
-
-    <!-- Character B: lightbulb idea-maker -->
-    <g>
-      <!-- head (bulb shape) -->
-      <circle cx="640" cy="230" r="120"/>
-      <path d="M600 340 h80 v30 h-80 z"/>
-      <path d="M615 385 h50"/>
-      <path d="M615 405 h50"/>
-      <!-- filament face -->
-      <circle cx="605" cy="215" r="9" fill="#4A342A"/>
-      <circle cx="675" cy="215" r="9" fill="#4A342A"/>
-      <path d="M600 260 Q640 285 680 260"/>
-      <!-- torso -->
-      <rect x="580" y="430" width="140" height="200" rx="28"/>
-      <!-- arms -->
-      <path d="M580 470 Q500 450 470 380"/>
-      <circle cx="460" cy="365" r="24"/>
-      <path d="M720 470 Q800 500 830 570"/>
-      <circle cx="840" cy="585" r="24"/>
-      <!-- legs -->
-      <path d="M615 630 Q600 660 585 690"/>
-      <circle cx="578" cy="700" r="20"/>
-      <path d="M685 630 Q700 660 715 690"/>
-      <circle cx="722" cy="700" r="20"/>
-    </g>
+  <g stroke="#4A342A" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <!-- Circle (community) -->
+    <path d="M740 130
+             C 815 130, 860 180, 860 260
+             C 860 330, 858 400, 835 435
+             C 810 470, 775 480, 740 480
+             C 700 480, 660 470, 638 432
+             C 618 398, 618 328, 618 260
+             C 618 180, 665 130, 740 130 Z" stroke-width="5.5"/>
+    <ellipse cx="705" cy="255" rx="7" ry="10" fill="#4A342A" stroke="none"/>
+    <ellipse cx="775" cy="255" rx="7" ry="10" fill="#4A342A" stroke="none"/>
+    <path d="M700 290 Q740 313 780 290" stroke-width="3"/>
+    <path d="M635 330 C 590 345, 570 390, 600 430" stroke-width="4.5"/>
+    <path d="M845 330 C 890 345, 905 390, 878 428" stroke-width="4.5"/>
+    <path d="M672 470 q23 15 46 0" stroke-width="3"/>
+    <path d="M762 470 q23 15 46 0" stroke-width="3"/>
+    <path d="M700 400 L740 380 L780 400 L760 430 L720 430 Z" stroke="#D98255" stroke-width="2"/>
+    <circle cx="700" cy="400" r="13" stroke-width="3"/>
+    <circle cx="740" cy="378" r="14" stroke-width="3"/>
+    <circle cx="780" cy="400" r="13" stroke-width="3"/>
+    <circle cx="760" cy="432" r="12" stroke-width="3"/>
+    <circle cx="720" cy="432" r="12" stroke-width="3"/>
   </g>
 </svg>

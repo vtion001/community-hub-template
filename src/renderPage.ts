@@ -11,12 +11,33 @@ export function renderPage(page: PageData | undefined): string {
   if (!page) {
     return `<div class="py-24 text-center font-brand text-[var(--color-muted)]">content coming soon.</div>`
   }
+
+  const ctaBlocks = page.blocks.filter((b): b is CtaBlock => b.type === 'cta')
+  const bodyBlocks = page.blocks.filter((b) => b.type !== 'cta')
+
   return `
-    <h1 class="font-brand text-4xl font-bold sm:text-5xl">${page.title}</h1>
-    <p class="mt-4 max-w-2xl text-[var(--color-fg)]">${page.intro}</p>
-    <div class="mt-10 space-y-8">
-      ${page.blocks.map(renderBlock).join('')}
-    </div>
+    <section class="relative isolate overflow-hidden border-b border-[var(--color-fg)]/10 bg-[var(--color-panel)]">
+      <img src="${withBase('/images/hero-bg.svg')}" alt="" class="pointer-events-none absolute right-[-15%] top-1/2 -z-10 hidden w-[42%] min-w-[300px] -translate-y-1/2 select-none opacity-60 lg:block" />
+      <div class="mx-auto max-w-4xl px-6 py-16">
+        <h1 class="font-brand text-4xl font-bold sm:text-5xl">${page.title}</h1>
+        <p class="mt-4 max-w-xl text-[var(--color-fg)]">${page.intro}</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-6 py-14">
+      <div class="space-y-8">
+        ${bodyBlocks.map(renderBlock).join('')}
+      </div>
+    </section>
+    ${
+      ctaBlocks.length
+        ? `<section class="border-t border-[var(--color-fg)]/10 bg-[var(--color-panel)]">
+      <div class="mx-auto max-w-4xl px-6 py-14 text-center">
+        ${ctaBlocks.map(renderBlock).join('')}
+      </div>
+    </section>`
+        : ''
+    }
   `
 }
 
