@@ -2,6 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { pool } from './db.ts'
+import { authRouter } from './auth/routes.ts'
 
 const app = express()
 app.use(express.json())
@@ -14,6 +15,13 @@ app.get('/api/health', async (_req, res) => {
     console.error('Health check failed:', err)
     res.status(500).json({ ok: false })
   }
+})
+
+app.use('/api/auth', authRouter)
+
+app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  console.error('Unhandled route error:', err)
+  res.status(500).json({ error: 'internal server error' })
 })
 
 const port = Number(process.env.PORT) || 3000
