@@ -166,7 +166,7 @@
     },
     "account": {
       "title": "Account",
-      "intro": "There's no login here — membership works through the WhatsApp group.",
+      "intro": "Sign in below, or create an account if you're already in the WhatsApp group.",
       "blocks": [
         { "type": "text", "body": "Everyone starts as a Newcomer and moves up by showing up — no application, no approval process." },
         { "type": "list", "items": [
