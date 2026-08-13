@@ -3,14 +3,14 @@ import request from 'supertest'
 import { app } from '../../server/index.ts'
 import { pool } from '../../server/db.ts'
 import { migrate } from '../../server/db/migrate.ts'
+import { resetDb } from './testDb.ts'
 
 beforeAll(async () => {
   await migrate()
 })
 
 beforeEach(async () => {
-  await pool.query('DELETE FROM users')
-  await pool.query('DELETE FROM roster')
+  await resetDb()
 })
 
 describe('POST /api/auth/signup', () => {

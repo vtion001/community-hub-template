@@ -3,9 +3,11 @@ import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { pool } from './db.ts'
 import { authRouter } from './auth/routes.ts'
+import { createSessionMiddleware } from './session.ts'
 
 const app = express()
 app.use(express.json())
+app.use(createSessionMiddleware())
 
 app.get('/api/health', async (_req, res) => {
   try {
