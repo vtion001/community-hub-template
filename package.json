@@ -4,17 +4,37 @@
   "description": "Reusable community-site template (layout/structure extracted from a reference site; all copy, colors, and artwork are original).",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "qc": "node scripts/qc-nav.mjs"
+    "qc": "node scripts/qc-nav.mjs",
+    "server": "node --experimental-strip-types server/index.ts",
+    "server:migrate": "node --experimental-strip-types server/db/migrate.ts",
+    "server:seed-admin": "node --experimental-strip-types server/db/seedAdmin.ts"
   },
   "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-pg-simple": "^10.0.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "pg": "^8.13.1"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "@types/bcrypt": "^5.0.2",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/pg": "^8.11.10",
+    "@types/supertest": "^6.0.2",
     "playwright": "^1.62.1",
+    "supertest": "^7.0.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
