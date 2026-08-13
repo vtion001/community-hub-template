@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { pool } from './db.ts'
 import { authRouter } from './auth/routes.ts'
+import { adminRouter } from './admin/routes.ts'
 import { createSessionMiddleware } from './session.ts'
 
 const app = express()
@@ -20,6 +21,7 @@ app.get('/api/health', async (_req, res) => {
 })
 
 app.use('/api/auth', authRouter)
+app.use('/api/admin', adminRouter)
 
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Unhandled route error:', err)
