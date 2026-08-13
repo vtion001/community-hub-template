@@ -33,6 +33,9 @@ export default defineConfig({
   plugins: [tailwindcss(), buildMetaPlugin()],
   server: {
     fs: { allow: ['..'] },
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
   },
   build: {
     rollupOptions: {

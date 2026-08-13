@@ -4,7 +4,11 @@ import express from 'express'
 import { pool } from './db.ts'
 import { authRouter } from './auth/routes.ts'
 import { adminRouter } from './admin/routes.ts'
+import { renderAdminPage } from './admin/page.ts'
 import { createSessionMiddleware } from './session.ts'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const distDir = path.resolve(__dirname, '..', 'dist')
 
 const app = express()
 app.use(express.json())
@@ -22,6 +26,12 @@ app.get('/api/health', async (_req, res) => {
 
 app.use('/api/auth', authRouter)
 app.use('/api/admin', adminRouter)
+
+app.get('/admin', (_req, res) => {
+  res.type('html').send(renderAdminPage())
+})
+
+app.use(express.static(distDir))
 
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Unhandled route error:', err)
