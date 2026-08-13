@@ -5,3 +5,4 @@ docs/design/build-*.png
 docs/design/*/home-*-full.jpeg
 .playwright-cli/
 preview.log
+.env

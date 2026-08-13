@@ -11,6 +11,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const distDir = path.resolve(__dirname, '..', 'dist')
 
 const app = express()
+// Render terminates TLS at its edge and forwards over plain HTTP internally.
+// Without trusting the proxy, Express's req.secure is always false, so
+// express-session's secure cookie option silently drops every Set-Cookie
+// header in production - this must be set before the session middleware.
+app.set('trust proxy', 1)
 app.use(express.json())
 app.use(createSessionMiddleware())
 
@@ -34,6 +39,9 @@ app.get('/admin', (_req, res) => {
 app.use(express.static(distDir))
 
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  if ((err as { type?: string }).type === 'entity.parse.failed') {
+    return res.status(400).json({ error: 'invalid JSON body' })
+  }
   console.error('Unhandled route error:', err)
   res.status(500).json({ error: 'internal server error' })
 })
