@@ -134,17 +134,7 @@
     "account": {
       "title": "Account",
       "intro": "Sign in below, or create an account if you're already in the WhatsApp group.",
-      "blocks": [
-        { "type": "text", "body": "Everyone starts as a Newcomer and moves up by showing up — no application, no approval process." },
-        { "type": "list", "items": [
-          "NEWCOMER — just joined.",
-          "BUILDER — regular at meetups, sharing what you're working on.",
-          "MENTOR — helping newer members.",
-          "VETERAN — long-time regular.",
-          "LEGEND — community fixture."
-        ]},
-        { "type": "cta", "label": "Join via WhatsApp", "href": "https://chat.whatsapp.com/KlrOkzxEGnI3id7XVx7fNH?s=cl&p=i&ilr=4&amv=0" }
-      ]
+      "blocks": []
     }
   },
   "dashboard": {

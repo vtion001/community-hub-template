@@ -26,11 +26,15 @@ export function renderPage(page: PageData | undefined, opts?: { afterHero?: stri
     </section>
     ${opts?.afterHero ?? ''}
 
-    <section class="mx-auto max-w-4xl px-6 py-14">
+    ${
+      bodyBlocks.length
+        ? `<section class="mx-auto max-w-4xl px-6 py-14">
       <div class="space-y-8">
         ${bodyBlocks.map(renderBlock).join('')}
       </div>
-    </section>
+    </section>`
+        : ''
+    }
     ${
       ctaBlocks.length
         ? `<section class="border-t border-[var(--color-fg)]/10 bg-[var(--color-panel)]">

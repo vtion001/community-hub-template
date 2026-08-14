@@ -110,9 +110,14 @@ describe('renderPage', () => {
     expect(ctaIndex).toBeGreaterThan(bodyIndex)
   })
 
-  it('has no content sections at all when there are zero blocks beyond header', () => {
+  it('has no content section at all when there are zero blocks beyond header', () => {
     const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
     const sectionCount = (html.match(/<section /g) || []).length
-    expect(sectionCount).toBe(2)
+    expect(sectionCount).toBe(1)
+  })
+
+  it('omits the content section entirely (not just an empty one) when blocks is empty', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    expect(html).not.toContain('space-y-8')
   })
 })

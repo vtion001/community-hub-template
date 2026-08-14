@@ -22,13 +22,20 @@ describe('site.json content shape', () => {
     }
   })
 
-  it('every page has a non-empty title, intro, and at least one block', () => {
+  it('every page has a non-empty title and intro; every page except Account also has at least one block', () => {
     for (const slug of PAGE_SLUGS) {
       const page = (site.pages as Record<string, { title: string; intro: string; blocks: unknown[] }>)[slug]
       expect(page.title.length).toBeGreaterThan(0)
       expect(page.intro.length).toBeGreaterThan(0)
-      expect(page.blocks.length).toBeGreaterThan(0)
+      if (slug !== 'account') {
+        expect(page.blocks.length).toBeGreaterThan(0)
+      }
     }
+  })
+
+  it('Account page has zero body blocks — its content lives entirely in the membership card', () => {
+    const page = (site.pages as any).account
+    expect(page.blocks.length).toBe(0)
   })
 
   it('nav has exactly 7 items, with Learn/Resources/Forum removed', () => {
