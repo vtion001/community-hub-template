@@ -1,5 +1,10 @@
 # Member-Gated Pages + Account Page Rework — Design
 
+> **SUPERSEDED (2026-08-15):** never implemented. Replaced by
+> `docs/superpowers/specs/2026-08-15-account-dashboard-design.md`, which removes Learn/Resources/
+> Forum from the nav and site entirely and folds their content into a member dashboard on the
+> Account page instead of gating them as separate routes. Kept here for history only.
+
 ## Goal
 
 Learn, Resources, and Forum become member-only content, enforced server-side (not just hidden with
