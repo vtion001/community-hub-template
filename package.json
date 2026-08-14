@@ -15,7 +15,9 @@
     "qc": "node scripts/qc-nav.mjs",
     "server": "node --experimental-strip-types server/index.ts",
     "server:migrate": "node --experimental-strip-types server/db/migrate.ts",
-    "server:seed-admin": "node --experimental-strip-types server/db/seedAdmin.ts"
+    "server:seed-admin": "node --experimental-strip-types server/db/seedAdmin.ts",
+    "tunnel:build": "node scripts/watch-tunnel-build.mjs",
+    "tunnel:serve": "node --experimental-strip-types server/tunnel.ts"
   },
   "license": "ISC",
   "dependencies": {

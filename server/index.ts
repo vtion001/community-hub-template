@@ -8,7 +8,11 @@ import { renderAdminPage } from './admin/page.ts'
 import { createSessionMiddleware } from './session.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const distDir = path.resolve(__dirname, '..', 'dist')
+const distDir = path.resolve(__dirname, '..', process.env.DIST_DIR ?? 'dist')
+// BASE_PATH lets one Express app serve under a URL prefix (e.g. a Tailscale
+// Funnel path-mount at /sig-espresso) without changing behavior when unset -
+// production and local dev both leave this empty and mount at root.
+const basePath = process.env.BASE_PATH ?? ''
 
 const app = express()
 // Render terminates TLS at its edge and forwards over plain HTTP internally.
@@ -19,7 +23,9 @@ app.set('trust proxy', 1)
 app.use(express.json())
 app.use(createSessionMiddleware())
 
-app.get('/api/health', async (_req, res) => {
+const router = express.Router()
+
+router.get('/api/health', async (_req, res) => {
   try {
     await pool.query('SELECT 1')
     res.status(200).json({ ok: true })
@@ -29,14 +35,16 @@ app.get('/api/health', async (_req, res) => {
   }
 })
 
-app.use('/api/auth', authRouter)
-app.use('/api/admin', adminRouter)
+router.use('/api/auth', authRouter)
+router.use('/api/admin', adminRouter)
 
-app.get('/admin', (_req, res) => {
+router.get('/admin', (_req, res) => {
   res.type('html').send(renderAdminPage())
 })
 
-app.use(express.static(distDir))
+router.use(express.static(distDir))
+
+app.use(basePath || '/', router)
 
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   if ((err as { type?: string }).type === 'entity.parse.failed') {
