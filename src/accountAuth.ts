@@ -3,11 +3,11 @@ import { renderBlocks, type Block } from './renderPage'
 
 export type DashboardSection = { key: string; title: string; blocks: Block[] }
 
-function renderPasswordField(name: string, placeholder: string, extra = ''): string {
+function renderPasswordField(name: string, placeholder: string, fieldLabel: string, extra = ''): string {
   return `
     <div class="relative">
       <input name="${name}" type="password" placeholder="${placeholder}" required ${extra} class="w-full rounded-[var(--radius-brand)] border border-[var(--color-fg)]/20 bg-[var(--color-bg)] px-3 py-2 pr-16" />
-      <button type="button" class="account-toggle-password absolute right-2 top-1/2 -translate-y-1/2 font-brand text-[10px] uppercase tracking-wide text-[var(--color-muted)] hover:text-[var(--color-fg)]">Show</button>
+      <button type="button" class="account-toggle-password absolute right-2 top-1/2 -translate-y-1/2 font-brand text-[10px] uppercase tracking-wide text-[var(--color-muted)] hover:text-[var(--color-fg)]" data-field-label="${fieldLabel}" aria-label="Show ${fieldLabel}">Show</button>
     </div>
   `
 }
@@ -43,14 +43,14 @@ export function renderAuthSection(dashboardSections: DashboardSection[]): string
           <h3 class="font-brand font-bold">Create an account</h3>
           <input name="name" type="text" placeholder="Name" required class="w-full rounded-[var(--radius-brand)] border border-[var(--color-fg)]/20 bg-[var(--color-bg)] px-3 py-2" />
           <input name="whatsappNumber" type="tel" placeholder="WhatsApp number" required class="w-full rounded-[var(--radius-brand)] border border-[var(--color-fg)]/20 bg-[var(--color-bg)] px-3 py-2" />
-          ${renderPasswordField('password', 'Password', 'minlength="8"')}
+          ${renderPasswordField('password', 'Password', 'new account password', 'minlength="8"')}
           <button type="submit" class="w-full rounded-[var(--radius-brand)] bg-[var(--color-accent)] px-4 py-2 text-sm font-bold uppercase text-[var(--color-fg)] hover:opacity-90">Sign up</button>
           <p id="signup-error" class="text-sm text-[var(--color-accent-text)]"></p>
         </form>
         <form id="login-form" class="space-y-2">
           <h3 class="font-brand font-bold">Log in</h3>
           <input name="identifier" type="text" placeholder="WhatsApp number" required class="w-full rounded-[var(--radius-brand)] border border-[var(--color-fg)]/20 bg-[var(--color-bg)] px-3 py-2" />
-          ${renderPasswordField('password', 'Password')}
+          ${renderPasswordField('password', 'Password', 'login password')}
           <button type="submit" class="w-full rounded-[var(--radius-brand)] border border-[var(--color-fg)]/40 px-4 py-2 text-sm font-bold uppercase hover:border-[var(--color-fg)]">Log in</button>
           <p id="login-error" class="text-sm text-[var(--color-accent-text)]"></p>
         </form>
@@ -80,6 +80,7 @@ export function mountAuthSection(dashboardSections: DashboardSection[]): void {
       const showing = input.type === 'text'
       input.type = showing ? 'password' : 'text'
       btn.textContent = showing ? 'Show' : 'Hide'
+      btn.setAttribute('aria-label', `${showing ? 'Show' : 'Hide'} ${btn.dataset.fieldLabel}`)
     })
   })
 

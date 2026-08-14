@@ -22,7 +22,7 @@ The footer is a study-music player (play/pause, prev/next, progress bar, track c
 
 ## Page layout
 
-Every content page (`src/renderPage.ts`, shared by all 10 nav pages) renders as up to three distinct sections, not one long stacked column:
+Every content page (`src/renderPage.ts`, shared by all 7 nav pages) renders as up to three distinct sections, not one long stacked column:
 1. **Header band** — page title + intro, panel background, mascot illustration on the right (desktop only)
 2. **Content band** — the page's list/cards/text blocks
 3. **CTA band** (only when the page has a `cta` block) — pulled out into its own highlighted closing section, separate from the rest of the content
@@ -54,7 +54,7 @@ docs/design/              # captured wireframe blueprint + build screenshots
 src/chrome.ts             # shared nav/footer renderer (pure functions)
 src/renderPage.ts         # generic page-body renderer (text/list/cards/cta blocks)
 src/pages/                # one thin entry file per nav page
-*.html (root)              # 11 real pages: index + one per nav item
+*.html (root)              # 8 real pages: index + one per nav item
 tests/                     # vitest unit tests for chrome.ts, renderPage.ts, content shape, palette
 scripts/qc-nav.mjs         # Playwright QC: nav click-through + console/error checks across all pages
 public/audio/              # study-music player tracks (currently placeholder tones — see Audio player above)
