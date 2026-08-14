@@ -88,7 +88,7 @@ function renderMemberRegion(dashboardSections: DashboardSection[]): string {
 export function renderAuthSection(dashboardSections: DashboardSection[], tiers: string[], whatsappHref: string): string {
   return `
     <section id="account-auth" class="mx-auto max-w-md px-6 py-10">
-      <div class="relative rounded-[var(--radius-brand)] border border-[var(--color-fg)]/60 bg-white p-6">
+      <div class="relative rounded-[var(--radius-brand)] border border-[var(--color-fg)]/60 bg-[var(--color-panel)] p-6">
         <span class="absolute -left-[7px] top-1/2 h-[14px] w-[14px] -translate-y-1/2 rounded-full border border-[var(--color-fg)]/60 bg-[var(--color-bg)]"></span>
         <span class="absolute -right-[7px] top-1/2 h-[14px] w-[14px] -translate-y-1/2 rounded-full border border-[var(--color-fg)]/60 bg-[var(--color-bg)]"></span>
 
