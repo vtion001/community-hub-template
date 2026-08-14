@@ -42,7 +42,11 @@ router.get('/admin', (_req, res) => {
   res.type('html').send(renderAdminPage())
 })
 
-router.use(express.static(distDir))
+// extensions:['html'] restores the extensionless-URL resolution the previous
+// tunnel static server (npx serve) provided by default - without it, old
+// bookmarks/history entries pointing at e.g. /account instead of
+// /account.html 404 with Express's default "Cannot GET" error.
+router.use(express.static(distDir, { extensions: ['html'] }))
 
 app.use(basePath || '/', router)
 

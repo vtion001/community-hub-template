@@ -20,6 +20,12 @@ describe('static frontend + admin page', () => {
     expect(res.status).toBe(404)
   })
 
+  it('resolves an extensionless path to its .html file (regression: the previous tunnel static server did this by default, so old bookmarks/history without the extension must keep working)', async () => {
+    const res = await request(app).get('/events')
+    expect(res.status).toBe(200)
+    expect(res.text).toContain('Events')
+  })
+
   it('serves a server-rendered /admin page, not part of the Vite build', async () => {
     const res = await request(app).get('/admin')
     expect(res.status).toBe(200)

@@ -1,3 +1,5 @@
+import { withBase } from './basePath'
+
 export function renderAuthSection(): string {
   return `
     <section id="account-auth" class="mx-auto max-w-md px-6 py-10">
@@ -43,7 +45,7 @@ export function mountAuthSection(): void {
   }
 
   async function refresh() {
-    const res = await fetch('/api/auth/me')
+    const res = await fetch(withBase('/api/auth/me'))
     loading!.classList.add('hidden')
     if (res.ok) {
       const user = await res.json()
@@ -57,7 +59,7 @@ export function mountAuthSection(): void {
   }
 
   logoutBtn.addEventListener('click', async () => {
-    await fetch('/api/auth/logout', { method: 'POST' })
+    await fetch(withBase('/api/auth/logout'), { method: 'POST' })
     refresh()
   })
 
@@ -65,7 +67,7 @@ export function mountAuthSection(): void {
     e.preventDefault()
     signupError.textContent = ''
     const form = new FormData(signupForm)
-    const res = await fetch('/api/auth/signup', {
+    const res = await fetch(withBase('/api/auth/signup'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -83,7 +85,7 @@ export function mountAuthSection(): void {
     e.preventDefault()
     loginError.textContent = ''
     const form = new FormData(loginForm)
-    const res = await fetch('/api/auth/login', {
+    const res = await fetch(withBase('/api/auth/login'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ identifier: form.get('identifier'), password: form.get('password') }),
