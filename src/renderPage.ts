@@ -8,7 +8,7 @@ export type HeadingBlock = { type: 'heading'; text: string }
 export type Block = TextBlock | ListBlock | CardsBlock | CtaBlock | HeadingBlock
 export type PageData = { title: string; intro: string; blocks: Block[] }
 
-export function renderPage(page: PageData | undefined): string {
+export function renderPage(page: PageData | undefined, opts?: { afterHero?: string }): string {
   if (!page) {
     return `<div class="py-24 text-center font-brand text-[var(--color-muted)]">content coming soon.</div>`
   }
@@ -24,6 +24,7 @@ export function renderPage(page: PageData | undefined): string {
         <p class="mt-4 max-w-xl text-[var(--color-fg)]">${page.intro}</p>
       </div>
     </section>
+    ${opts?.afterHero ?? ''}
 
     <section class="mx-auto max-w-4xl px-6 py-14">
       <div class="space-y-8">
@@ -40,6 +41,10 @@ export function renderPage(page: PageData | undefined): string {
         : ''
     }
   `
+}
+
+export function renderBlocks(blocks: Block[]): string {
+  return blocks.map(renderBlock).join('')
 }
 
 function renderBlock(block: Block): string {

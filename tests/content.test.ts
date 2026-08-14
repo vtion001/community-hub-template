@@ -2,9 +2,11 @@ import { describe, it, expect } from 'vitest'
 import site from '../content/site.json'
 
 const PAGE_SLUGS = [
-  'events', 'shop', 'resources', 'forum', 'blog',
-  'gallery', 'learn', 'about', 'contribute', 'account',
+  'events', 'shop', 'blog',
+  'gallery', 'about', 'contribute', 'account',
 ]
+
+const DASHBOARD_SECTION_KEYS = ['learn', 'resources', 'forum']
 
 describe('site.json content shape', () => {
   it('has a pages entry for every nav item slug', () => {
@@ -26,6 +28,24 @@ describe('site.json content shape', () => {
       expect(page.title.length).toBeGreaterThan(0)
       expect(page.intro.length).toBeGreaterThan(0)
       expect(page.blocks.length).toBeGreaterThan(0)
+    }
+  })
+
+  it('nav has exactly 7 items, with Learn/Resources/Forum removed', () => {
+    expect(site.nav.items.length).toBe(7)
+    for (const removedSlug of DASHBOARD_SECTION_KEYS) {
+      expect(site.nav.items.some((i: any) => i.slug === removedSlug)).toBe(false)
+    }
+  })
+
+  it('has exactly 3 dashboard sections, one per removed page, each with a title and at least one block', () => {
+    const sections = (site as any).dashboard.sections
+    expect(sections.length).toBe(3)
+    for (const key of DASHBOARD_SECTION_KEYS) {
+      const section = sections.find((s: any) => s.key === key)
+      expect(section).toBeDefined()
+      expect(section.title.length).toBeGreaterThan(0)
+      expect(section.blocks.length).toBeGreaterThan(0)
     }
   })
 })
