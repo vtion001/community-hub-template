@@ -1,0 +1,123 @@
+import { describe, it, expect } from 'vitest'
+import { renderPage } from '../src/renderPage'
+
+describe('renderPage', () => {
+  it('renders the fallback when page data is missing', () => {
+    const html = renderPage(undefined)
+    expect(html).toContain('content coming soon')
+  })
+
+  it('renders title and intro', () => {
+    const html = renderPage({ title: 'Events', intro: 'Come hang out.', blocks: [] })
+    expect(html).toContain('Events')
+    expect(html).toContain('Come hang out.')
+  })
+
+  it('renders a text block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'text', body: 'Hello there.' }],
+    })
+    expect(html).toContain('Hello there.')
+  })
+
+  it('renders a list block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'list', items: ['One', 'Two'] }],
+    })
+    expect(html).toContain('<li>One</li>')
+    expect(html).toContain('<li>Two</li>')
+  })
+
+  it('renders a cards block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).toContain('Card A')
+    expect(html).toContain('Body A')
+  })
+
+  it('renders a card tag when present', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ tag: 'DROP IN', title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).toContain('DROP IN')
+  })
+
+  it('renders no tag element when a card has no tag', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).not.toContain('<span')
+  })
+
+  it('renders the cards grid with a 3-column desktop breakpoint', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cards', items: [{ title: 'Card A', body: 'Body A' }] }],
+    })
+    expect(html).toContain('lg:grid-cols-3')
+  })
+
+  it('renders a heading block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'heading', text: 'Where' }],
+    })
+    expect(html).toContain('Where')
+    expect(html).toContain('<h2')
+  })
+
+  it('renders a cta block', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'cta', label: 'Join', href: '/join' }],
+    })
+    expect(html).toContain('href="/join"')
+    expect(html).toContain('Join')
+  })
+
+  it('renders at least two distinct sections: a header band and a content band', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [{ type: 'text', body: 'Body copy.' }],
+    })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBeGreaterThanOrEqual(2)
+  })
+
+  it('includes the mascot illustration in the header band', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    expect(html).toContain('/images/hero-bg.svg')
+  })
+
+  it('pulls cta blocks into their own trailing section, separate from other content', () => {
+    const html = renderPage({
+      title: 'T', intro: 'I',
+      blocks: [
+        { type: 'text', body: 'Body copy.' },
+        { type: 'cta', label: 'Join', href: '/join' },
+      ],
+    })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBe(3)
+    const ctaIndex = html.indexOf('Join')
+    const bodyIndex = html.indexOf('Body copy.')
+    expect(ctaIndex).toBeGreaterThan(bodyIndex)
+  })
+
+  it('has no content section at all when there are zero blocks beyond header', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    const sectionCount = (html.match(/<section /g) || []).length
+    expect(sectionCount).toBe(1)
+  })
+
+  it('omits the content section entirely (not just an empty one) when blocks is empty', () => {
+    const html = renderPage({ title: 'T', intro: 'I', blocks: [] })
+    expect(html).not.toContain('space-y-8')
+  })
+})
