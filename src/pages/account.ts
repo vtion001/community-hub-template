@@ -9,10 +9,12 @@ const dashboardSections = (site as any).dashboard.sections
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${renderHeader(site as any, 'account')}
   <main class="relative isolate overflow-hidden">
-    ${renderPage((site.pages as any).account, { afterHero: renderAuthSection(dashboardSections) })}
+    ${renderPage((site.pages as any).account, {
+      afterHero: renderAuthSection(dashboardSections, site.hero.tiers, site.nav.cta.href),
+    })}
   </main>
   ${renderFooter(site as any)}
 `
 
 mountPlayer(site as any)
-mountAuthSection(dashboardSections)
+mountAuthSection()
