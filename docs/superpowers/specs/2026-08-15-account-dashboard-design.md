@@ -1,5 +1,12 @@
 # Account Dashboard + Nav Simplification — Design
 
+> **PARTIALLY SUPERSEDED (2026-08-15):** the nav-simplification and data-model parts of this spec
+> (Learn/Resources/Forum removed from nav, content moved into `dashboard.sections`) were implemented
+> and stay as-is. The visual/layout design for the Account page itself — the "membership card" panel
+> described below — was shipped, then judged not good enough and redesigned from scratch via a full
+> brainstorming pass. See `docs/superpowers/specs/2026-08-15-account-membership-card-design.md` for
+> the current design of the login/signup/dashboard UI.
+
 ## Goal
 
 Remove Learn, Resources, and Forum as standalone nav pages. Their content moves into a members-only

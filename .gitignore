@@ -6,3 +6,6 @@ docs/design/*/home-*-full.jpeg
 .playwright-cli/
 preview.log
 .env
+.tunnel-root/
+.tunnel-root-serve.log
+.superpowers/
