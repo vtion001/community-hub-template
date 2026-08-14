@@ -8,8 +8,8 @@ const site = JSON.parse(readFileSync(path.resolve(__dirname, '../content/site.js
 
 const BASE = process.argv[2] || 'http://127.0.0.1:4400'
 const PAGE_PATHS = [
-  '', 'events.html', 'shop.html', 'resources.html', 'forum.html',
-  'blog.html', 'gallery.html', 'learn.html', 'about.html',
+  '', 'events.html', 'shop.html',
+  'blog.html', 'gallery.html', 'about.html',
   'contribute.html', 'account.html',
 ]
 const DESKTOP_NAV_SELECTOR = 'header nav#desktop-nav a'

@@ -25,8 +25,8 @@ function buildMetaPlugin() {
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 const pageSlugs = [
-  'events', 'shop', 'resources', 'forum', 'blog',
-  'gallery', 'learn', 'about', 'contribute', 'account',
+  'events', 'shop', 'blog',
+  'gallery', 'about', 'contribute', 'account',
 ]
 
 export default defineConfig({
